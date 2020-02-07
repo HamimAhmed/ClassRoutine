@@ -16,12 +16,12 @@ class AuthController extends Controller
 
     public function LoginProcess(Request $request){
 
-//        $request ->validate([
-//            'password' => 'required',
-//            'email' => 'required ',
-//            'mobile_no' =>'required',
-//
-//        ]);
+        $request ->validate([
+            'password' => 'required',
+            'email' => 'required ',
+            'mobile_no' =>'required',
+
+        ]);
 
         $login = $request->except('_token');
 
@@ -56,13 +56,13 @@ class AuthController extends Controller
      */
     public function RegistrationProcess(Request $request){
 
-//        $request ->validate([
-//            'name' => 'required',
-//            'email' => 'required | email | unique:users',
-//            'mobile_no' =>'required',
-//            'password' => 'required | min:6',
-//            'image' => 'required|image|mimes:jpeg,bmp,png'
-//        ]);
+        $request ->validate([
+            'name' => 'required',
+            'email' => 'required | email | unique:users',
+            'mobile_no' =>'required',
+            'password' => 'required | min:6',
+            'image' => 'required|image|mimes:jpeg,bmp,png'
+        ]);
 
 
         $file = $request->file('image');
